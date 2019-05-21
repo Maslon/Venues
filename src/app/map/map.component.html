@@ -1,0 +1,20 @@
+<agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+>
+  <agm-marker *ngFor="let venue of venues | paginate: {itemsPerPage: 6, currentPage: page}"
+    [latitude]="getLatitude(venue)"
+    [longitude]="getLongitude(venue)"
+    [iconUrl]="venue.trcid === venueSelected ? '../assets/pins/Google_Maps_pin_green.svg' : '../assets/pins/Google_Maps_pin.svg'"
+    (markerClick)="onMarkerClick(venue)"
+  ></agm-marker>
+  <agm-marker *ngFor="let event of events"
+    [latitude]="getLatitude(event)"
+    [longitude]="getLongitude(event)"
+    [iconUrl]="'../assets/pins/Google_Maps_pin_blue.svg'"
+  ></agm-marker>
+</agm-map>
+
+
+

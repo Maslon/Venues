@@ -1,0 +1,8 @@
+<app-venue-item 
+    *ngFor="let venue of venues| paginate: {itemsPerPage: 6, currentPage: page}"
+    [venue]="venue"
+    (click)="selectVenue(venue)"
+    [ngStyle]="{backgroundColor: venue.trcid === venueSelected ? 'grey' : 'transparent'}"
+    [venueSelected]="venueSelected"
+></app-venue-item>
+

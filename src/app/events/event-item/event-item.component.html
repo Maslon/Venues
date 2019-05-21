@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-title>{{ event.title }}</mat-card-title>
+  <mat-card-content *ngIf="event.dates.singles">
+      Date: <span *ngFor="let date of event.dates.singles">
+      {{date}},
+    </span>
+  </mat-card-content>
+  <mat-card-content [textContent]="getStartDate()"></mat-card-content>
+  <mat-card-content [textContent]="getEndDate()"></mat-card-content>
+  <mat-card-content [textContent]="formatDistance()"></mat-card-content>
+</mat-card>
+

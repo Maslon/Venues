@@ -1,0 +1,18 @@
+.image {
+	width: 280px;
+	height: 215px;
+	margin-right: 0.3rem;
+}
+
+.images {
+	text-align: center;
+}
+
+.url-link {
+	text-decoration: none;
+	color: rgb(36, 17, 80);
+}
+
+.url-container {
+	text-align: center;
+}

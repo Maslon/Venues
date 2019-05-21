@@ -1,0 +1,31 @@
+.main-heading {
+	text-align: center;
+}
+
+label {
+	margin-left: 1rem;
+}
+
+.events {
+	overflow: auto;
+}
+
+app-events {
+	display: flex;
+}
+
+.filters {
+	display: inline-block;
+	width: 50%;
+}
+
+.map {
+	display: inline-block;
+	margin: 0 1%;
+	width: 48%;
+	vertical-align: top;
+}
+
+.pagination {
+	text-align: center;
+}

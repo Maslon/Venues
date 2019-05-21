@@ -1,0 +1,26 @@
+.main-heading {
+	text-align: center;
+}
+
+.venueForm {
+	display: inline-flex;
+	flex-direction: column;
+	width: 370px;
+	margin-left: 7rem;
+}
+
+.eventForm {
+	display: inline-flex;
+	flex-direction: column;
+	width: 300px;
+	margin-left: 7rem;
+}
+
+.reset-button {
+	margin-top: 1rem;
+	margin-left: 7rem;
+}
+
+mat-radio-button {
+	margin-right: 5px;
+}

@@ -1,0 +1,11 @@
+
+<mat-card (click)="onVenueClick()">
+  <mat-card-title>{{venue.title}}</mat-card-title>
+  <mat-card-content>{{venue.location.city}} {{venue.location.adress}}</mat-card-content>
+  <mat-card-content>{{venue.location.zipcode}}</mat-card-content>
+  <mat-card-content>  <p [innerText]="venue.dates.startdate ? venue.dates.startdate : 'Start year not available'"></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="onMoreInfo()" mat-raised-button color="warn" *ngIf="venue.trcid === venueSelected">More Info</button>
+  </mat-card-actions>
+</mat-card>

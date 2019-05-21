@@ -1,0 +1,11 @@
+<div class="details-container">
+    <h1>{{venue.title}}</h1>
+    <p>{{venue.location.adress}}, {{venue.location.city}}, {{venue.location.zipcode}}</p>
+    <div class="images">
+        <img class="image" [src]="image.url" alt="" *ngFor="let image of venue.media">
+    </div>
+    <div class="url-container" *ngFor="let url of venue.urls">
+        <a class="url-link" target="_blank" [href]="url">Check site</a>
+    </div>
+</div>
+<button mat-dialog-close mat-raised-button color="warn">Close</button>

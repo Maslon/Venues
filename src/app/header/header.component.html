@@ -1,0 +1,63 @@
+<h1 class="main-heading">Out in Amsterdam</h1>
+<div class="filter">
+  <form (ngSubmit)="onFilterVenues(f)" #f="ngForm" class="venueForm">
+      <mat-label>Filter Venues by:</mat-label>
+      <mat-radio-group
+        [(ngModel)]="filterVenueBy"
+        aria-label="Select an option"
+        name="filter"
+        required>
+        <mat-radio-button value="name">Name</mat-radio-button>
+        <mat-radio-button value="city">City</mat-radio-button>
+        <mat-radio-button value="startYear">Start year</mat-radio-button>
+        <mat-radio-button value="postcode">Postcode</mat-radio-button>
+      </mat-radio-group>
+    <mat-form-field>
+      <input 
+        *ngIf="filterVenueBy !== 'city'; else select" 
+        name="filterValue"
+        matInput
+        ngModel
+        required>
+      <ng-template #select>
+          <mat-select          
+          multiple
+          ngModel
+          name="filterValue">
+          <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
+        </mat-select>
+      </ng-template>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="f.invalid">Filter Venues</button>
+  </form>
+
+
+  <form (ngSubmit)="onFilterEvents(ff)" #ff="ngForm" class="eventForm">
+      <mat-label>Filter Events by:</mat-label>
+      <mat-radio-group
+      [(ngModel)]="filterEventBy"
+      aria-label="Select an option"
+      name="filterEvent"
+      required>
+      <mat-radio-button value="eventName">Name</mat-radio-button>
+      <mat-radio-button value="yearAndMonth">Date: MM-YYYY</mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field>
+      <input 
+        name="filterEventValue"
+        matInput
+        ngModel
+        required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="ff.invalid">Filter events</button>
+  </form>
+
+  <button class="reset-button" mat-raised-button color="warn" (click)="onResetFilter()">Reset Filter</button>
+
+
+  
+
+</div>
+
+
